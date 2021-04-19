@@ -1,6 +1,8 @@
 // GET default
 const tableBody = document.getElementById('todosTableBody');
 const usersOptionBtn = document.getElementById('users-tab');
+const ordersOptionBtn = document.getElementById('orders-tab');
+
 
 window.addEventListener('load', async function() {
     const response = await fetch('https://jsonplaceholder.typicode.com/todos');
@@ -10,6 +12,10 @@ window.addEventListener('load', async function() {
 
 usersOptionBtn.addEventListener('click', function() {
     window.location.href = 'http://127.0.0.1:5500/';
+});
+
+ordersOptionBtn.addEventListener('click', function() {
+    window.location.href = 'http://127.0.0.1:5500/orders.html';
 });
 
 function createTableRow(todo) {
