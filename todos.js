@@ -1,29 +1,31 @@
 // GET default
 const tableBody = document.getElementById('todosTableBody');
 const usersOptionBtn = document.getElementById('users-tab');
+const ordersOptionBtn = document.getElementById('orders-tab');
 
-window.addEventListener('load', function() {
-    fetch('https://jsonplaceholder.typicode.com/todos')
-        .then(function handleResponse(response) {
-            return response.json();
-        })
-        .then(function consoleData(todosData) {
-            todosData.forEach(createTableRow)
-        })
 
-    function createTableRow(todo) {
-        const tableRow = `
-            <tr>
-                <th scope="row">${todo.id}</th>
-                <td>${todo.userId}</td>
-                <td>${todo.title}</td>
-                <td>${todo.completed}</td>
-            </tr>
-        `
-        tableBody.insertAdjacentHTML('beforeend', tableRow)
-    }
+window.addEventListener('load', async function() {
+    const response = await fetch('https://jsonplaceholder.typicode.com/todos');
+    const todosData = await response.json();
+    todosData.forEach(createTableRow);
 });
 
 usersOptionBtn.addEventListener('click', function() {
     window.location.href = 'http://127.0.0.1:5500/';
 });
+
+ordersOptionBtn.addEventListener('click', function() {
+    window.location.href = 'http://127.0.0.1:5500/orders.html';
+});
+
+function createTableRow(todo) {
+    const tableRow = `
+        <tr>
+            <th scope="row">${todo.id}</th>
+            <td>${todo.userId}</td>
+            <td>${todo.title}</td>
+            <td>${todo.completed}</td>
+        </tr>
+    `
+    tableBody.insertAdjacentHTML('beforeend', tableRow)
+}
