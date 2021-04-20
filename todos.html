@@ -50,6 +50,11 @@
           </div>
         </aside>
         <div class="col-9 offset-1">
+          <div class="d-flex">
+            <button type="button" class="btn btn-primary ms-auto" data-bs-toggle="modal" data-bs-target="#createTodoModal">
+              Create Todo
+            </button>
+          </div>
           <table class="table">
             <thead>
               <tr>
@@ -62,6 +67,39 @@
             <tbody id="todosTableBody">
             </tbody>
           </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="createTodoModal" tabindex="-1" aria-labelledby="createTodoModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="createTodoModal">Create Todo</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form id="createOrderForm">
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="id" class="form-label">ID:</label>
+                <input type="text" class="form-control" id="id">
+              </div>
+              <div class="mb-3">
+                <label for="title" class="form-label">Title:</label>
+                <input type="text" class="form-control" id="title">
+              </div>
+              <div class="mb-3">
+                <select class="form-select" id="completed" aria-label="Default select example">
+                  <option value="True">True</option>
+                  <option value="False">False</option>
+                </select>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <input type="submit" class="btn btn-success" id="createUserButton" value="Create" />
+            </div>
+          </form>
         </div>
       </div>
     </div>
