@@ -20,6 +20,8 @@ ordersOptionBtn.addEventListener('click', function() {
     window.location.href = 'http://127.0.0.1:5500/orders.html';
 });
 
+
+
 createUserForm.addEventListener('submit', async function(event) {
     event.preventDefault();
     // Esto es exactamente lo mismo que realiza la accion de destructuring
