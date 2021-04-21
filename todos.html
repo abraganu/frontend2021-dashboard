@@ -50,6 +50,11 @@
           </div>
         </aside>
         <div class="col-9 offset-1">
+          <div class="d-flex">
+            <button type="button" class="btn btn-primary ms-auto" data-bs-toggle="modal" data-bs-target="#createTodosModal">
+              Create to do
+            </button>
+          </div>
           <table class="table">
             <thead>
               <tr>
@@ -62,6 +67,37 @@
             <tbody id="todosTableBody">
             </tbody>
           </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="createTodosModal" tabindex="-1" aria-labelledby="createTodosModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="createTodosModal">Create to do</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form id="createTodosForm">
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="user" class="form-label">User:</label>
+                <input type="number" class="form-control" id="user">
+              </div>
+              <div class="mb-3">
+                <label for="title" class="form-label">Title:</label>
+                <input type="text" class="form-control" id="title">
+              </div>
+              <div class="mb-3">
+                <label for="completed" class="form-label">Completed:</label>
+                <input type="text" class="form-control" id="completed">
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <input type="submit" class="btn btn-success" id="createTodoButton" value="Create" />
+            </div>
+          </form>
         </div>
       </div>
     </div>
