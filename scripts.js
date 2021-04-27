@@ -5,6 +5,15 @@ let starships = [];
 let vehicles = [];
 let mappedPeople = [];
 
+/**
+ * TODO: crear una nueva funcion que filtre los resultados repetidos
+ * y concatene el array filtrado.
+ * films
+ * species
+ * starships
+ * vehicles
+ * */ 
+
 function mappedPeopleData(people = []) {
     return people.map((person) => {
         films = films.concat(person.films);
