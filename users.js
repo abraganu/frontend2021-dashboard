@@ -1,6 +1,8 @@
 // GET default
 const tableBody = document.getElementById('usersTableBody');
 const todosOptionBtn = document.getElementById('todos-tab');
+const ordersOptionBtn = document.getElementById('orders-tab');
+
 const createUserForm = document.getElementById('createUserForm');
 const createUserModal = new bootstrap.Modal(document.getElementById('createUserModal'), {
     keyboard: false
@@ -14,6 +16,10 @@ window.addEventListener('load', async function() {
 
 todosOptionBtn.addEventListener('click', function() {
     window.location.href = 'http://127.0.0.1:5500/todos.html';
+});
+
+ordersOptionBtn.addEventListener('click', function() {
+    window.location.href = 'http://127.0.0.1:5500/orders.html';
 });
 
 createUserForm.addEventListener('submit', async function(event) {
